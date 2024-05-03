@@ -1,9 +1,10 @@
 namespace Digitalkirana.Views
 {
+    // The way this file is located in the direcory is dependent on API in each use "Dispose"
     partial class Category
     {
         /// <summary>
-        /// Required designer variable.
+  
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -114,6 +115,10 @@ namespace Digitalkirana.Views
             // 
             // saveBtn
             // 
+            // This section is creating error, each file seems to connet to this file diercory
+            // The first method of update can be used to remove the file 
+            // The second method is to fill up the data in row and change the value input of each folder
+            //
             this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(95)))), ((int)(((byte)(112)))));
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Location = new System.Drawing.Point(16, 123);

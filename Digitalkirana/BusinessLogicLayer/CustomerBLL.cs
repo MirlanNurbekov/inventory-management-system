@@ -12,4 +12,34 @@ namespace Digitalkirana.BusinessLogicLayer
         public int AddedBy { get; set; }
         public DateTime AddedDate { get; set; }
     }
+
+    public class ParkingBLL
+    {
+        public int ParkingId { get; set; }
+        public int CustomerId { get; set; }
+        public CustomerBLL Customer { get; set; }
+        public int SlotNumber { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public decimal Price { get; set; }
+
+        public ParkingBLL()
+        {
+            Customer = new CustomerBLL();
+        }
+
+        // Calculates the total hours parked
+        public double CalculateParkingDuration()
+        {
+            TimeSpan duration = EndTime.Subtract(StartTime);
+            return duration.TotalHours;
+        }
+
+        // Calculates the total parking fee based on a fixed rate per hour
+        public decimal CalculateParkingFee(decimal ratePerHour)
+        {
+            double hours = CalculateParkingDuration();
+            return (decimal)hours * ratePerHour;
+        }
+    }
 }
